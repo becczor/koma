@@ -1,1 +1,0 @@
-kolasååååååååås! Vilken lycka!
