@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SnowFlakeWake</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_set__alarm">Set_Alarm</string>
+    <string name="title_activity_weather__options">Weather_Options</string>
+
+</resources>
