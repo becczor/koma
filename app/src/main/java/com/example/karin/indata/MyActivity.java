@@ -27,9 +27,10 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
 
 
-
+        // the image is invisible from start, see XML
         image = (ImageView) findViewById(R.id.imageView);
 
+        // when pressing button, read file, change text and image
         button = (Button) findViewById(R.id.btnChangeImage);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,13 +43,16 @@ public class MyActivity extends Activity {
                 // when click on button, read from file and change textview and imageview
                 try {
                     Log.d("ReadFileLog", "I try-satsen");
+                    // get the image from the assets folder
                     InputStream iS = getAssets().open("data.txt");
 
                     Log.d("ReadFileLog", "innan buffered reader");
+                    // create a buffered reader for the file
                     br = new BufferedReader(new InputStreamReader(iS));
                     String line;
                     Log.d("ReadFileLog", "Innan while");
 
+                    // when able to read from file, set text in TextField to content from file
                     while((line = br.readLine()) != null)
                     {
                         Log.d("ReadFileLog", "I while-loopen");
@@ -57,10 +61,12 @@ public class MyActivity extends Activity {
 
                     Log.d("ReadFileLog", "Det gick bra!");
 
+                    // set the invisible image to visible
                     image.setVisibility(View.VISIBLE);
                 }
                 catch (Exception e)
                 {
+                    // if not able to read from file, program will crash and write exception in log
                     Log.d("ReadFileLog", "exception", e);
                 }
             }
